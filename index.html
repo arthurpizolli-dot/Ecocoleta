@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ecocoleta - Recicle e transforme</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🌱 <span>Eco</span>coleta
+            </div>
+
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#como-funciona">Como funciona</a></li>
+                <li><a href="#coleta">Coleta</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <span class="tag">♻️ Pequenas atitudes, grandes mudanças</span>
+
+                <h1>
+                    Transforme seu lixo em
+                    <span>impacto positivo.</span>
+                </h1>
+
+                <p>
+                    O Ecocoleta ajuda você a registrar materiais recicláveis,
+                    encontrar pontos de coleta e acompanhar sua contribuição
+                    para um planeta mais sustentável.
+                </p>
+
+                <a href="#coleta" class="btn">
+                    Registrar reciclagem
+                </a>
+            </div>
+
+            <div class="hero-card">
+                <div class="eco-icon">♻️</div>
+                <h3>Recicle hoje</h3>
+                <p>Faça parte da mudança.</p>
+
+                <div class="mini-stats">
+                    <div>
+                        <strong id="heroKg">0</strong>
+                        <span>kg reciclados</span>
+                    </div>
+
+                    <div>
+                        <strong id="heroPoints">0</strong>
+                        <span>pontos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section id="como-funciona" class="section">
+            <div class="section-title">
+                <span>COMO FUNCIONA</span>
+                <h2>Reciclar ficou mais fácil</h2>
+                <p>
+                    Siga três passos simples para começar a contribuir.
+                </p>
+            </div>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">🗑️</div>
+                    <h3>Separe</h3>
+                    <p>
+                        Separe os materiais recicláveis dos resíduos comuns.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">📍</div>
+                    <h3>Encontre</h3>
+                    <p>
+                        Escolha um ponto de coleta próximo de você.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🌱</div>
+                    <h3>Transforme</h3>
+                    <p>
+                        Registre sua reciclagem e acompanhe seu impacto.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COLETA -->
+        <section id="coleta" class="collection-section">
+
+            <div class="section-title">
+                <span>REGISTRO</span>
+                <h2>Registre sua reciclagem</h2>
+                <p>
+                    Informe o material e a quantidade que você reciclou.
+                </p>
+            </div>
+
+            <div class="collection-container">
+
+                <form id="ecoForm" class="eco-form">
+
+                    <div class="form-group">
+                        <label for="material">Tipo de material</label>
+
+                        <select id="material" required>
+                            <option value="">Selecione...</option>
+                            <option value="Plástico">♴ Plástico</option>
+                            <option value="Papel">📄 Papel</option>
+                            <option value="Vidro">🍾 Vidro</option>
+                            <option value="Metal">🥫 Metal</option>
+                            <option value="Eletrônico">💻 Eletrônico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade em kg</label>
+
+                        <input
+                            type="number"
+                            id="quantidade"
+                            min="0.1"
+                            step="0.1"
+                            placeholder="Ex.: 2.5"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ponto">Ponto de coleta</label>
+
+                        <select id="ponto" required>
+                            <option value="">Selecione...</option>
+                            <option value="EcoCentro">EcoCentro</option>
+                            <option value="Cooperativa Verde">Cooperativa Verde</option>
+                            <option value="Ponto Sustentável">Ponto Sustentável</option>
+                            <option value="Recicla Curitiba">Recicla Curitiba</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">
+                        ♻️ Registrar coleta
+                    </button>
+
+                    <p id="message" class="message"></p>
+
+                </form>
+
+                <!-- DASHBOARD -->
+                <div class="dashboard">
+
+                    <div class="dashboard-header">
+                        <h3>Meu impacto</h3>
+                        <span>🌎</span>
+                    </div>
+
+                    <div class="impact-grid">
+
+                        <div class="impact-card green">
+                            <span>♻️</span>
+                            <strong id="totalKg">0 kg</strong>
+                            <small>Materiais reciclados</small>
+                        </div>
+
+                        <div class="impact-card blue">
+                            <span>⭐</span>
+                            <strong id="totalPoints">0</strong>
+                            <small>Pontos conquistados</small>
+                        </div>
+
+                        <div class="impact-card orange">
+                            <span>📦</span>
+                            <strong id="totalColetas">0</strong>
+                            <small>Coletas realizadas</small>
+                        </div>
+
+                        <div class="impact-card purple">
+                            <span>🌳</span>
+                            <strong id="trees">0</strong>
+                            <small>Árvores equivalentes</small>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTÓRICO -->
+        <section class="section history-section">
+
+            <div class="section-title">
+                <span>HISTÓRICO</span>
+                <h2>Suas últimas reciclagens</h2>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Quantidade</th>
+                            <th>Ponto de coleta</th>
+                            <th>Pontos</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyBody">
+                    </tbody>
+                </table>
+
+                <div id="emptyHistory" class="empty">
+                    <span>🌱</span>
+                    <p>Você ainda não possui registros.</p>
+                </div>
+
+            </div>
+
+            <button id="clearData" class="clear-btn">
+                Limpar histórico
+            </button>
+
+        </section>
+
+        <!-- IMPACTO -->
+        <section id="impacto" class="impact-section">
+
+            <div class="impact-content">
+
+                <div>
+                    <span class="tag light">NOSSO IMPACTO</span>
+
+                    <h2>
+                        Cada quilo conta para um
+                        <span>futuro melhor.</span>
+                    </h2>
+
+                    <p>
+                        A reciclagem reduz a quantidade de resíduos enviados
+                        aos aterros, economiza recursos naturais e contribui
+                        para uma economia mais sustentável.
+                    </p>
+                </div>
+
+                <div class="impact-numbers">
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>compromisso</span>
+                    </div>
+
+                    <div>
+                        <strong>♻️</strong>
+                        <span>reciclagem</span>
+                    </div>
+
+                    <div>
+                        <strong>🌎</strong>
+                        <span>sustentabilidade</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="logo">🌱 <span>Eco</span>coleta</div>
+
+        <p>
+            Cuidar do planeta começa com uma escolha.
+        </p>
+
+        <p class="copyright">
+            © 2026 Ecocoleta — Projeto de sustentabilidade.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
